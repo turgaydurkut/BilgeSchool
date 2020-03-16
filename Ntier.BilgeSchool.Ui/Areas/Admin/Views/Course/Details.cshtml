@@ -1,0 +1,139 @@
+﻿@model Ntier.BilgeSchool.Model.Entity.Course
+
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-primary"><b>Ders Detay</b></h3>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EducationYear.EducationYearName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EducationYear.EducationYearName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Period.PeriodName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Period.PeriodName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseHour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseHour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedComputerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedComputerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedIP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedIP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAdUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAdUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedComputerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedComputerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedIP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedIP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedAdUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedAdUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Ntier.BilgeSchool.Model.Entity.Classroom>
+
+@{
+    ViewBag.Title = "Liste";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-primary"><b>Sınıf Liste</b></h3>
+<br />
+<p>
+    @Html.ActionLink("Yeni Kayıt +", "Create")
+</p>
+
+<div class="panel-body">
+    <div class="adv-table editable-table ">
+        <div class="space15"></div>
+        <table class="table table-striped table-hover table-bordered" id="editable-sample">
+            <thead>
+                <tr>
+                    <th>Sıra No</th>
+                    <th>Adı</th>
+                    <th>Durum</th>
+                    <th>Duzenle</th>
+                    <th>Detay</th>
+                    <th>Sil</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClassroomName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+
+                        <td>@Html.ActionLink("Düzenle", "Edit", new { id = item.ID })</td>
+                        <td>@Html.ActionLink("Detay", "Details", new { id = item.ID })</td>
+                        <td>
+                            @Html.ActionLink("Sil", "Delete", new { id = item.ID })
+
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

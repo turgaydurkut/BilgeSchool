@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Ntier.BilgeSchool.Model.Entity.CourseNote>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/TeacherInformation/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-primary"><b>Öğrenci Ders Notu Liste</b></h3>
+<br />
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="panel-body">
+    <div class="adv-table editable-table ">
+        <div class="space15"></div>
+        <table class="table table-striped table-hover table-bordered" id="editable-sample">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Öğrenci Ad")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Dönem")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Ders")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Not1")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Not2")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Not3")
+                    </th>
+                    <th>
+                        @Html.DisplayName("ÖdevNot")
+                    </th>
+                    <th>
+                        @Html.DisplayName("NotOrtalama")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Puan")
+                    </th>
+                    <th>Düzenle</th>
+                    <th>Detay</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student.StudentName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Period.PeriodName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Course.CourseName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PointOne)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PointTwo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PointThree)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HomeWorkNote)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AveragePoint)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalPoint)
+                        </td>
+
+                        <td>@Html.ActionLink("Düzenle", "Edit", new { id = item.ID })</td>
+                        <td>@Html.ActionLink("Detay", "Details", new { id = item.ID })</td>
+                        <td>
+                            @Html.ActionLink("Sil", "Delete", new { id = item.ID })
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<h3 class="text-primary"><b>Admin Anasayfa</b></h3>
+<br />
+<div class="row state-overview">
+    <div class="col-lg-3 col-sm-6">
+        <section class="panel">
+            <div class="symbol terques">
+                <i class="icon-user"></i>
+            </div>
+            <div class="value">
+                <h1 class="count">
+                    @Session["Student"]
+                </h1>
+                <p>Öğrenci</p>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <section class="panel">
+            <div class="symbol red">
+                <i class="icon-tags"></i>
+            </div>
+            <div class="value">
+                <h1 class=" count2">
+                    @Session["Teacher"]
+                </h1>
+                <p>Öğretmen</p>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <section class="panel">
+            <div class="symbol yellow">
+                <i class="icon-tasks"></i>
+            </div>
+            <div class="value">
+                <h1 class=" count3">
+                    @Session["Classroom"]
+                </h1>
+                <p>Sınıf</p>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <section class="panel">
+            <div class="symbol blue">
+                <i class="icon-barcode"></i>
+            </div>
+            <div class="value">
+                <h1 class=" count4">
+                    @Session["Section"]
+                </h1>
+                <p>Şube</p>
+            </div>
+        </section>
+    </div>
+</div>
+

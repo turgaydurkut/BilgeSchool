@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3 class="text-primary"><b>Öğrenci Ders Notu Listesi</b></h3>
+<br />
+
+
+<div class="panel-body">
+    <div class="adv-table editable-table ">
+        <div class="space15"></div>
+        <table class="table table-striped table-hover table-bordered" id="editable-sample">
+            <thead>
+                <tr>
+                    <th>Öğrenci No</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Ders</th>
+                    <th>Dönem</th>
+                    <th>Not1</th>
+                    <th>Not2</th>
+                    <th>Not3</th>
+                    <th>Ortalama</th>
+                    <th>Puan</th>
+                    <th>Duzenle</th>
+                    <th>Detay</th>
+                    <th>Sil</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @if (Session["Notes"] != null)
+                {
+                    foreach (var item in Session["Notes"] as IEnumerable<Ntier.BilgeSchool.Model.Entity.CourseNote>)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Student.StudentNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Student.StudentName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Student.StudentLastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Course.CourseName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Period.PeriodName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PointOne)
+                            </td>
+                            <td>@Html.DisplayFor(modelItem => item.PointTwo)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PointThree)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AveragePoint)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TotalPoint)</td>
+
+
+                            <td>@Html.ActionLink("Düzenle", "Edit", new { id = item.ID })</td>
+                            <td>@Html.ActionLink("Detay", "Details", new { id = item.ID })</td>
+                            <td>@Html.ActionLink("Sil", "Delete", new { id = item.ID })</td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

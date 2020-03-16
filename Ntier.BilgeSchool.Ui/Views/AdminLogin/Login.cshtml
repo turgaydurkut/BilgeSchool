@@ -1,0 +1,112 @@
+﻿@model Ntier.BilgeSchool.Model.Entity.AppUser
+@{
+    ViewBag.Title = "Giriş";
+}
+<h3 class="text-primary"><b>Yönetici Giriş Sayfası</b></h3>
+<br />
+
+
+@if (TempData["Kayit"] != null)
+{
+    <span>@TempData["Kayit"]</span>
+}
+
+
+
+
+<body class="login-body">
+
+    <div class="container">
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <span class="text-danger">@ViewBag.Error</span>
+                </div>
+            </div>
+        }
+
+        <form class="form-signin" method="post">
+            <h2 class="form-signin-heading">Yönetici Girişi</h2>
+
+            <div class="login-wrap">
+
+
+                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", placeholder = "Kullanıcı Adı", type = "text", style = "width:300px;" })
+
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control", placeholder = "Şifre", type = "password", style = "width:300px;" })
+
+                <div class="form-group">
+
+                    <input type="submit" value="Giriş" class="btn btn-success" />
+
+                </div>
+
+                <div class="registration">
+                    Kayıtlı Kullanıcı Değilmisin?
+                    @Html.ActionLink("Yeni Kayıt", "Register", "AppUser", htmlAttributes: new { @class = "btn btn-danger text text-white" })
+                </div>
+
+
+
+            </div>
+
+            <!-- Modal -->
+            <!-- modal -->
+
+        </form>
+
+
+
+    </div>
+
+
+
+    <!-- js placed at the end of the document so the pages load faster -->
+
+
+</body>
+
+
+
+
+<div class="container">
+    <div class="row col-lg-12">
+        <p class="text-hide">a</p>
+    </div>
+    <div class="row col-lg-12">
+        <p class="text-hide">a</p>
+    </div>
+    <div class="row col-lg-12">
+        <p class="text-hide">a</p>
+    </div>
+    <div class="row col-lg-12">
+        <p class="text-hide">a</p>
+    </div>
+    <div class="row col-lg-12">
+        <p class="text-hide">a</p>
+    </div>
+    <div class="row col-lg-12">
+        <p class="text-hide">a</p>
+    </div>
+    <div class="row col-lg-12">
+        <p class="text-hide">a</p>
+    </div>
+    <div class="row col-lg-12">
+        <p class="text-hide">a</p>
+    </div>
+    <div class="row col-lg-12">
+        <p class="text-hide">a</p>
+    </div>
+    <div class="row col-lg-12">
+        <p class="text-hide">a</p>
+    </div>
+
+</div>
+
+
+
+
+
+<!-- js placed at the end of the document so the pages load faster -->

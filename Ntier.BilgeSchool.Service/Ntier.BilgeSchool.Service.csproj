@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{266A23FB-1865-4092-ACB1-E73E79FDFDD1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ntier.BilgeSchool.Service</RootNamespace>
+    <AssemblyName>Ntier.BilgeSchool.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseService.cs" />
+    <Compile Include="Option\AnnouncementService.cs" />
+    <Compile Include="Option\AppUserService.cs" />
+    <Compile Include="Option\AttendanceService.cs" />
+    <Compile Include="Option\BranchService.cs" />
+    <Compile Include="Option\ClassroomService.cs" />
+    <Compile Include="Option\CourseCodeService.cs" />
+    <Compile Include="Option\CourseNoteService.cs" />
+    <Compile Include="Option\CourseService.cs" />
+    <Compile Include="Option\EducationScheduleService.cs" />
+    <Compile Include="Option\EducationYearService.cs" />
+    <Compile Include="Option\FamilyService.cs" />
+    <Compile Include="Option\HomeworkService.cs" />
+    <Compile Include="Option\MessageService.cs" />
+    <Compile Include="Option\PeriodService.cs" />
+    <Compile Include="Option\SectionService.cs" />
+    <Compile Include="Option\StudentService.cs" />
+    <Compile Include="Option\SuccessListService.cs" />
+    <Compile Include="Option\TeacherService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ntier.BilgeSchool.Core\Ntier.BilgeSchool.Core.csproj">
+      <Project>{08b89837-76fd-43a3-a78c-223d7f313451}</Project>
+      <Name>Ntier.BilgeSchool.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ntier.BilgeSchool.Model\Ntier.BilgeSchool.Model.csproj">
+      <Project>{f055c33c-12c6-4f9d-bd7d-63efaaf311c7}</Project>
+      <Name>Ntier.BilgeSchool.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

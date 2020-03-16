@@ -1,0 +1,25 @@
+﻿@model Ntier.BilgeSchool.Model.Entity.Student
+@{
+    ViewBag.Title = "Attendances";
+    Layout = "~/Areas/StudentInformation/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-primary"><b>Öğrenci Yoklama Bilgisi</b></h3>
+<br />
+
+
+@using (Html.BeginForm("Attendances", "StudentData", FormMethod.Post))
+{
+    <label>Öğrenci No :</label>
+    @Html.EditorFor(x => x.StudentNumber)
+    <input type="submit" value="Gönder" class="btn btn-primary" />
+
+}
+
+
+
+
+
+<div>
+    @Html.ActionLink("Listeye Dön", "IndexAttendances")
+</div>

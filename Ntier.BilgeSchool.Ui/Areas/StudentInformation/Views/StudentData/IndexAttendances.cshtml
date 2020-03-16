@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "IndexAttendances";
+    Layout = "~/Areas/StudentInformation/Views/Shared/_Layout.cshtml";
+}
+<h3 class="text-primary"><b>Öğrenci Yoklama Listesi</b></h3>
+<br />
+
+<div class="panel-body">
+    <div class="adv-table editable-table ">
+        <div class="space15"></div>
+        <table class="table table-striped table-hover table-bordered" id="editable-sample">
+            <thead>
+                <tr>
+                    <th>Öğrenci No</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Ders</th>
+                    <th>Dönem</th>
+                    <th>Durum</th>
+                    <th>Tarih</th>
+                    <th>Gun</th>
+                    <th>Toplam Gun</th>
+                    <th>Duzenle</th>
+                    <th>Detay</th>
+                    <th>Sil</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @if (Session["Attendances"] != null)
+                {
+                    foreach (var item in Session["Attendances"] as IEnumerable<Ntier.BilgeSchool.Model.Entity.Attendance>)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Student.StudentNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Student.StudentName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Student.StudentLastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Course.CourseName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Period.PeriodName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Events)
+                            </td>
+                            <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Gun)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TotalDay)</td>
+
+
+
+                            <td>@Html.ActionLink("Düzenle", "Edit", new { id = item.ID })</td>
+                            <td>@Html.ActionLink("Detay", "Details", new { id = item.ID })</td>
+                            <td>@Html.ActionLink("Sil", "Delete", new { id = item.ID })</td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@model Ntier.BilgeSchool.Model.Entity.AppUser
+@{
+    ViewBag.Title = "Düzenle";
+}
+<h3 class="text-primary"><b>Öğretmen Giriş Kaydı Düzenleme Sayfası</b></h3>
+<br />
+
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            KULLANICI BİLGİLERİ
+        </div>
+
+        <div class="panel-body">
+            @using (Html.BeginForm("UserUpdate", "TeacherLogin", FormMethod.Post))
+            {
+
+                <label> User Name </label>
+                <div class="input-group">
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", placeholder = "user name", type = "text", style = "width:300px;" })
+                </div>
+                <label> Password </label>
+                <div class="input-group">
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control", placeholder = "password", type = "password", style = "width:300px;" })
+                </div>
+                <label> FirstName </label>
+                <div class="input-group">
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", placeholder = "first name", type = "text", style = "width:300px;" })
+                </div>
+                <label> LastName </label>
+                <div class="input-group">
+                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", placeholder = "last name", type = "text", style = "width:300px;" })
+                </div>
+
+
+            }
+        </div>
+    </div>
+
+
+</div>
+

@@ -1,0 +1,122 @@
+﻿@model Ntier.BilgeSchool.Model.Entity.Classroom
+
+@{
+    ViewBag.Title = "Sil";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<h3 class="text-primary"><b>Sınıf Silme</b></h3>
+<br />
+<h3 class="text text-danger">Silmek İstediğine Emin misin?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassroomName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassroomName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedComputerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedComputerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedIP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedIP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAdUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAdUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedComputerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedComputerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedIP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedIP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedAdUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedAdUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Listeye Dön", "Index")
+        </div>
+    }
+</div>

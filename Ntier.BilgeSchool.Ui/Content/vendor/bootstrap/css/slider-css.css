@@ -1,0 +1,52 @@
+﻿#slider {
+    positon: relative;
+    margin-left: 100px;
+    margin-right: auto;
+    width: 950px;
+    height: 400px;
+    overflow: hidden;
+}
+
+    #slider img {
+        width: 950px;
+        height: 400px;
+    }
+
+    #slider li {
+        list-style: none;
+    }
+
+.sliderbutton {
+    position: relative;
+    margin: 0 auto;
+    width: 120px;
+    margin-top: -25px;
+}
+
+    .sliderbutton li {
+        list-style: none;
+        padding: 5px;
+        background: red;
+        float: left;
+        margin-right: 10px;
+        border-radius: 10px;
+    }
+
+.sliderleft {
+    cursor: pointer;
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+    width: 50px;
+    height: 400px;
+    line-height: 400px;
+}
+
+.sliderright {
+    margin-left: 900px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+    width: 50px;
+    height: 400px;
+    line-height: 400px;
+}

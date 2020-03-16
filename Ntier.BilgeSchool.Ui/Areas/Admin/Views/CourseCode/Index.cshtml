@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Ntier.BilgeSchool.Model.Entity.CourseCode>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+    <h3 class="text-primary"><b>Ders Kategori Liste</b></h3>
+<br />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="panel-body">
+    <div class="adv-table editable-table ">
+        <div class="space15"></div>
+        <table class="table table-striped table-hover table-bordered"id="editable-sample">
+            <thead>
+                <tr>
+                    <th>Sıra No</th>
+                    <th>Ders Adı</th>
+                    <th>Ders Kodu</th>
+                    <th>Edit</th>
+                    <th>Details</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="">
+                        <td>@item.ID</td>
+                        <td>@item.Course.CourseName</td>
+                        <td>@item.CourseCodeName</td>
+                        <td>@Html.ActionLink("Edit", "Edit", new { id = item.ID })</td>
+                        <td>@Html.ActionLink("Details", "Details", new { id = item.ID })</td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

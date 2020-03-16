@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Ntier.BilgeSchool.Model.Entity.Attendance>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/TeacherInformation/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-primary"><b>Öğrenci Yoklama Listele</b></h3>
+<br />
+
+<p>
+    @Html.ActionLink("Yeni Kayıt +", "Create")
+</p>
+
+<div class="panel-body">
+    <div class="adv-table editable-table ">
+        <div class="space15"></div>
+        <table class="table table-striped table-hover table-bordered" id="editable-sample">
+            <thead>
+                <tr>
+                    <th>Dönem</th>
+                    <th>Okul No</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Tarih</th>
+                    <th>Gun</th>
+                    <th>Duzenle</th>
+                    <th>Detay</th>
+                    <th>Sil</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                             @item.Period.PeriodName
+                        </td>
+                        <td>
+                            @item.Student.StudentNumber
+                        </td>
+                        <td>
+                         @item.Student.StudentName
+                        </td>
+                        <td>
+                          @item.Student.StudentLastName
+                        </td>
+                       @item.Date.ToString()
+                        <td>
+                        </td>
+                        @item.Gun.ToString()
+                        <td>
+                        <td>@Html.ActionLink("Düzenle", "Edit", new { id = item.ID })</td>
+
+                        <td>@Html.ActionLink("Detay", "Details", new { id = item.ID })</td>
+                        
+                        <td>@Html.ActionLink("Sil", "Delete", new { id = item.ID })</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        
+    </div>
+</div>

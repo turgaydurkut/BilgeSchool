@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="~/Areas/Content/img/favicon.png">
+
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Areas/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Areas/Content/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/Areas/Content/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Areas/Content/assets/data-tables/DT_bootstrap.css" />
+    <link href="~/Areas/Content/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/Areas/Content/css/owl.carousel.css" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="~/Areas/Content/css/style.css" rel="stylesheet">
+    <link href="~/Areas/Content/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <section id="container">
+        <!--header start-->
+        <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="~/StudentInformation/StudentData/Index" class="logo">Bilge<span>Koleji</span></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- settings start -->
+                    <!-- settings end -->
+                    <!-- inbox dropdown start-->
+                    <!-- inbox dropdown end -->
+                    <!-- notification dropdown start-->
+                    <!-- notification dropdown end -->
+                </ul>
+                <!--  notification end -->
+            </div>
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        <input type="text" class="form-control search" placeholder="Search">
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+
+                            <span class="username"><span>Hoşgeldin!</span> @Session["user"]</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                           
+                            <li><a href="~/StudentLogin/Logout">Log Out</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li>
+                        <a class="active" href="~/StudentInformation/StudentData/Index">
+                            <i class="icon-dashboard"></i>
+                            <span>Bilge Koleji</span>
+                        </a>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="icon-laptop"></i>
+                            <span>Öğrenci Bilgileri</span>
+                        </a>
+                        <ul class="sub">
+                            <li>@Html.ActionLink("Ders Notları", "CourseNotes", "StudentData")</li>
+
+                            <li>@Html.ActionLink("Yoklama", "Attendances", "StudentData")</li>
+
+                            <li>@Html.ActionLink("Ödev", "Homework", "StudentData")</li>
+                        </ul>
+                    </li>
+
+                    
+
+                   
+
+
+                    <!--multi level menu start-->
+                    <!--multi level menu end-->
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <!--state overview start-->
+                
+                <!--state overview end-->
+
+                @RenderBody()
+
+            </section>
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                @DateTime.Now.Year &copy; Bilge Koleji
+                <a href="#" class="go-top">
+                    <i class="icon-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="~/Areas/Content/js/jquery.js"></script>
+    <script src="~/Areas/Content/js/jquery-1.8.3.min.js"></script>
+    <script src="~/Areas/Content/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="~/Areas/Content/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/Areas/Content/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Areas/Content/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="~/Areas/Content/js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="~/Areas/Content/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="~/Areas/Content/js/owl.carousel.js"></script>
+    <script src="~/Areas/Content/js/jquery.customSelect.min.js"></script>
+    <script type="text/javascript" src="~/Areas/Content/assets/data-tables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/Areas/Content/assets/data-tables/DT_bootstrap.js"></script>
+    <script src="~/Areas/Content/js/respond.min.js"></script>
+
+    <script class="include" type="text/javascript" src="~/Areas/Content/js/jquery.dcjqaccordion.2.7.js"></script>
+
+    <!--common script for all pages-->
+    <script src="~/Areas/Content/js/common-scripts.js"></script>
+
+    <!--script for this page-->
+    <script src="~/Areas/Content/js/editable-table.js"></script>
+    <script src="~/Areas/Content/js/sparkline-chart.js"></script>
+    <script src="~/Areas/Content/js/easy-pie-chart.js"></script>
+    <script src="~/Areas/Content/js/count.js"></script>
+
+    <script>
+
+         jQuery(document).ready(function() {
+              EditableTable.init();
+          });
+
+        //owl carousel
+
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true,
+                autoPlay: true
+
+            });
+        });
+
+        //custom select box
+
+        $(function () {
+            $('select.styled').customSelect();
+        });
+
+    </script>
+
+</body>
+</html>

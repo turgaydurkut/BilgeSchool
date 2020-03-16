@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Ntier.BilgeSchool.Model.Entity.Student>
+
+@{
+    ViewBag.Title = "GetStudentIndex";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h3 class="text-primary"><b>Şubeye Göre Öğrenci Listesi</b></h3>
+<br />
+
+@*<p>
+    @Html.ActionLink("Yeni Kayıt +", "Create")
+</p>*@
+
+<div class="panel-body">
+    <div class="adv-table editable-table ">
+        <div class="space15"></div>
+        <table class="table table-striped table-hover table-bordered" id="editable-sample">
+            <thead>
+                <tr>
+                    <th>Sınıf</th>
+                    <th>Şube</th>
+                    <th>Okul No</th>
+                    <th>Ad</th>
+                    <th>SoyAd</th>
+                    <th>Duzenle</th>
+                    <th>Sil</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Classroom.ClassroomName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Section.SectionName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentLastName)
+                    </td>
+
+                    <td>@Html.ActionLink("Düzenle", "GetStudentSection", new { id = item.ID })
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Sil", "StudentDelete", new { id = item.ID })
+                    </td>
+                    
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<td>@Html.ActionLink("Listeye Dön", "StudentWaitSectionIndex", null, new { @class = "btn btn-primary" })</td>
